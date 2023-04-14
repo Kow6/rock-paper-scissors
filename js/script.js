@@ -39,20 +39,21 @@ function getComputerChoice(){
 
 function getPlayerChoice(){
 
-playerChoice = prompt("Enter your selection")
+    let playerChoiceinput = prompt("Enter Rock, Paper,or Scissors.")
 
-playerChoice.toLowerCase
+    playerChoice = playerChoiceinput.toLowerCase()
 
-if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
+    if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
     console.log("great")
-}
-    else getPlayerChoice()
+    }
+        else getPlayerChoice()
 
 }
 
-getPlayerChoice()
+function gameRound(){
 
-/* function gameRound(){
+    getPlayerChoice()
+    getComputerChoice()
 
     if (playerChoice == "rock" && computerChoice == "rock"){
         console.log("tie")
@@ -64,8 +65,32 @@ getPlayerChoice()
     else if (playerChoice == "rock" && computerChoice == "scissors") {
         console.log("You Win! Rock crushes Scissors")
         }
-    else
-        console.log("not coded")
-    }
+    
+    else if (playerChoice == "scissors" && computerChoice == "rock") {
+        console.log("You Lose! Scissor gets crushed by Rock")
+            }
 
-gameRound */
+    else if (playerChoice == "scissors" && computerChoice == "paper") {
+        console.log("You Win! Scissors cuts up Paper")
+                }
+
+    else if (playerChoice == "scissors" && computerChoice == "scissors") {
+        console.log("tie")
+                    }
+
+    else if (playerChoice == "paper" && computerChoice == "rock") {
+        console.log("You Win! Paper covers Rock")
+                        }
+
+    else if (playerChoice == "paper" && computerChoice == "paper") {
+        console.log("tie")
+                            }
+
+    else if (playerChoice == "paper" && computerChoice == "scissors") {
+        console.log("You Lose! Paper gets cut up bye Scissors")
+                                }
+                            }
+
+gameRound()
+console.log(playerChoice)
+console.log(computerChoice)
