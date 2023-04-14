@@ -99,16 +99,24 @@ function gameRound(){
 
 function game(){
     
-    let gameresultstring = gameRound()
-    
-    let result = gameresultstring.includes("win")
+let gameresultstring = gameRound()
 
-    if (result = true){
+    if (gameresultstring.includes("tie")){
+        console.log("tie")
+        game()
+}
+        
+let result = gameresultstring.includes("Win")
+   
+   
+    if (result == true){
         playerScore++
 }
-        else{
+    
+    else{
             computerScore++
 }
+
 
 console.log(playerScore)
 console.log(computerScore)
@@ -122,9 +130,7 @@ console.log(computerScore)
     }
 
     else game()
- 
-    
-    
+       
 }
 
 game()
