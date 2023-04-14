@@ -95,6 +95,38 @@ function gameRound(){
     }
 
 
-console.log(gameRound())
+
+
+function game(){
+    
+    let gameresultstring = gameRound()
+    
+    let result = gameresultstring.includes("win")
+
+    if (result = true){
+        playerScore++
+}
+        else{
+            computerScore++
+}
+
+console.log(playerScore)
+console.log(computerScore)
+
+    if (playerScore > 4){
+    console.log("You Win!")
+}
+
+    else if (computerScore > 4){
+        console.log("Computer Wins!")
+    }
+
+    else game()
+ 
+    
+    
+}
+
+game()
 
 
