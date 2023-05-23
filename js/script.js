@@ -20,7 +20,7 @@ let playerScore = 0
 
 function getComputerChoice(){
     let computerChoiceVariable = Math.random()
-    
+    console.log(computerChoiceVariable)
     if (computerChoiceVariable < .334){
         computerChoice = "rock"
     }
@@ -35,6 +35,7 @@ function getComputerChoice(){
         
     return computerChoice
 }
+
 
 //Create and store player Choice of R/P/S
 
@@ -118,8 +119,8 @@ let result = gameresultstring.includes("Win")
 }
 
 
-console.log(playerScore)
-console.log(computerScore)
+console.log('Player Score ' + playerScore)
+console.log('Computer Score ' + computerScore)
 
     if (playerScore > 4){
     console.log("You Win!")
