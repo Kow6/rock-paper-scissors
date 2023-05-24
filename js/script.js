@@ -9,14 +9,14 @@ output the answer
 
 */
 
-// Declare some varibales
+// Declaring some varibales
 
 let computerChoice
 let playerChoice
 let computerScore = 0
 let playerScore = 0
 
-// Create Funtion for Computer Choice of R/P/S
+// Defining the Funtion to create Computer Choice of R/P/S
 
 function getComputerChoice(){
     let computerChoiceVariable = Math.random()
@@ -37,7 +37,7 @@ function getComputerChoice(){
 }
 
 
-//Create and store player Choice of R/P/S
+//Defining the Funtion to create and store player Choice of R/P/S
 
 
 function getPlayerChoice(){
@@ -49,14 +49,20 @@ function getPlayerChoice(){
     if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
     
     }
-        else getPlayerChoice()
+        else getPlayerChoice() // if entry isn't right then ask again 
 
 }
 
+
+//Defining the Game Round. The retrun value of a round is win/lose/tie
+
 function gameRound(){
 
-    getPlayerChoice()
-    getComputerChoice()
+    getPlayerChoice();
+    getComputerChoice();
+    console.log(playerChoice);
+    console.log(computerChoice);
+    
 
     if (playerChoice == "rock" && computerChoice == "rock"){
         
@@ -96,18 +102,21 @@ function gameRound(){
     }
 
 
-
+/* COMMENT OUT the rounds game
 
 function game(){
-    
-let gameresultstring = gameRound()
 
-    if (gameresultstring.includes("tie")){
+//run a round and put result into a string
+let gameresultstring = gameRound() 
+
+//check if result for a tie and if so print tie
+if (gameresultstring.includes("tie")){
         console.log("tie")
         game()
 }
-        
-let result = gameresultstring.includes("Win")
+
+//result is created only to handle games that are wins or losses 
+let result = gameresultstring.includes("Win") //includles method evaluates to True if Win is there
    
    
     if (result == true){
@@ -134,6 +143,11 @@ console.log('Computer Score ' + computerScore)
        
 }
 
-game()
+//instructing js to run the game
+
+game() END COMNMENT */
+
+
+
 
 
