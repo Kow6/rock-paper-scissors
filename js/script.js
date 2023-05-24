@@ -18,6 +18,50 @@ let playerScore = 0
 
 // Defining the Funtion to create Computer Choice of R/P/S
 
+
+
+
+//Defining the Funtion to create and store player Choice of R/P/S
+
+
+/* function getPlayerChoice(){
+
+    let playerChoiceinput = prompt("Enter Rock, Paper,or Scissors.")
+
+    playerChoice = playerChoiceinput.toLowerCase()
+
+    if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
+    
+    }
+        else getPlayerChoice() // if entry isn't right then ask again 
+
+}
+
+*/
+
+const rockButton = document.querySelector('#rock')
+rockButton.addEventListener('click', () => {
+    playerChoice = 'rock';
+    console.log(playerChoice);
+    
+})
+
+const paperButton = document.querySelector('#paper')
+paperButton.addEventListener('click', () => {
+    playerChoice = 'paper';
+    console.log(playerChoice);
+    
+})
+
+const scissorsButton = document.querySelector('#scissors')
+scissorsButton.addEventListener('click', () => {
+    playerChoice = 'scissors';
+    console.log(playerChoice);
+    
+})
+
+
+
 function getComputerChoice(){
     let computerChoiceVariable = Math.random()
     console.log(computerChoiceVariable)
@@ -36,22 +80,6 @@ function getComputerChoice(){
     return computerChoice
 }
 
-
-//Defining the Funtion to create and store player Choice of R/P/S
-
-
-function getPlayerChoice(){
-
-    let playerChoiceinput = prompt("Enter Rock, Paper,or Scissors.")
-
-    playerChoice = playerChoiceinput.toLowerCase()
-
-    if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
-    
-    }
-        else getPlayerChoice() // if entry isn't right then ask again 
-
-}
 
 
 //Defining the Game Round. The retrun value of a round is win/lose/tie
