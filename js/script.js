@@ -96,13 +96,13 @@ function gameRound(){
 
 function postRoundResult(){
         let gameresultstring = gameRound();
-        const container2 = document.querySelector('#result');
-        container2.removeChild(container2.lastElementChild);
+        const resultContainer = document.querySelector('#result');
+        resultContainer.removeChild(resultContainer.lastElementChild);
         const content2 = document.createElement('span');
         content2.textContent = gameresultstring;
         
         
-        container2.append(content2);
+        resultContainer.append(content2);
 
 
         let result = gameresultstring.includes("Win") //includles method evaluates to True if Win is there
@@ -115,8 +115,39 @@ function postRoundResult(){
         else{
             computerScore++
 }
-        
+
+
+const playerContainer = document.querySelector('#playerscore');
+playerContainer.removeChild(playerContainer.lastElementChild);
+const playerContent = document.createElement('span');
+playerContent.textContent = playerScore;
+playerContainer.appendChild(playerContent);
+
+const compContainer = document.querySelector('#compscore');
+compContainer.removeChild(compContainer.lastElementChild);
+const compContent = document.createElement('span');
+compContent.textContent = computerScore;
+compContainer.appendChild(compContent);
+
+if (playerScore > 4) {
+
+    const winnerContainer = document.querySelector('#winner');
+    const winnerContent = document.createElement('div');
+    winnerContent.textContent = "You WIN!"
+    winnerContainer.append(winnerContent);
+}
+
+if (computerScore > 4) {
+
+    const winnerContainer = document.querySelector('#winner');
+    const winnerContent = document.createElement('div');
+    winnerContent.textContent = "The Basilisk WINS!"
+    winnerContainer.append(winnerContent);
+}
+
     }
+
+
 
 //Event Listeners for Player Choice
 const rockButton = document.querySelector('#rock')
@@ -142,56 +173,6 @@ paperButton.addEventListener('click', function(){
 scissorsButton.addEventListener('click', function(){
     postRoundResult()});
 
-
-
-
-
-/* COMMENT OUT the rounds game
-
-function game(){
-
-//run a round and put result into a string
-let gameresultstring = gameRound() 
-
-//check if result for a tie and if so print tie
-if (gameresultstring.includes("tie")){
-        console.log("tie")
-        game()
-}
-
-//result is created only to handle games that are wins or losses 
-let result = gameresultstring.includes("Win") //includles method evaluates to True if Win is there
-   
-   
-    if (result == true){
-        playerScore++
-}
-    
-    else{
-            computerScore++
-}
-
-
-console.log('Player Score ' + playerScore)
-console.log('Computer Score ' + computerScore)
-
-    if (playerScore > 4){
-    console.log("You Win!")
-}
-
-    else if (computerScore > 4){
-        console.log("Computer Wins!")
-    }
-
-    else game()
-       
-}
-
-//instructing js to run the game
-
-game() END COMNMENT */
-
-
-
+//TRYING
 
 
