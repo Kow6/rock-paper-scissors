@@ -1,13 +1,3 @@
-/* 
-generate computer r/p/s - DONE
-create selection of r/p/s - DONE
-capture input of r/p/s - DONE
-store input of r/p/s into variable - DONE
-store computer selection in r/p/s - DONE
-compare 2 selections
-output the answer
-
-*/
 
 // Declaring some varibales
 
@@ -16,56 +6,13 @@ let playerChoice
 let computerScore = 0
 let playerScore = 0
 
-// Defining the Funtion to create Computer Choice of R/P/S
 
 
 
-
-//Defining the Funtion to create and store player Choice of R/P/S
-
-
-/* function getPlayerChoice(){
-
-    let playerChoiceinput = prompt("Enter Rock, Paper,or Scissors.")
-
-    playerChoice = playerChoiceinput.toLowerCase()
-
-    if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
-    
-    }
-        else getPlayerChoice() // if entry isn't right then ask again 
-
-}
-
-*/
-
-//Event Listeners for Player Choice
-const rockButton = document.querySelector('#rock')
-rockButton.addEventListener('click', () => {
-    playerChoice = 'rock';
-
-
-})
-
-const paperButton = document.querySelector('#paper')
-paperButton.addEventListener('click', () => {
-    playerChoice = 'paper';
-
-    
-})
-
-const scissorsButton = document.querySelector('#scissors')
-scissorsButton.addEventListener('click', () => {
-    playerChoice = 'scissors';
-
-    
-})
-
-
-
+//funtion to generate computer choice
 function getComputerChoice(){
     let computerChoiceVariable = Math.random()
-    console.log(computerChoiceVariable)
+    
     if (computerChoiceVariable < .334){
         computerChoice = "rock"
     }
@@ -83,7 +30,7 @@ function getComputerChoice(){
 
 
 
-//Defining the Game Round. The retrun value of a round is win/lose/tie
+//Function for a Game Round. The retrun value of a round is win/lose/tie
 
 function gameRound(){
 
@@ -92,10 +39,12 @@ function gameRound(){
     
 
 
+    
     const container = document.querySelector('#comp');
+    container.removeChild(container.lastElementChild);
     const content = document.createElement('span');
     content.textContent = computerChoice;
-    console.log(content)
+   
     container.appendChild(content);
 
 
@@ -143,19 +92,49 @@ function gameRound(){
 
     }
 
+//funtion for what happens when there is a click
+
 function postRoundResult(){
         let gameresultstring = gameRound();
         const container2 = document.querySelector('#result');
+        container2.removeChild(container2.lastElementChild);
         const content2 = document.createElement('span');
         content2.textContent = gameresultstring;
-        console.log(content2);
+        
         
         container2.append(content2);
+
+
+        let result = gameresultstring.includes("Win") //includles method evaluates to True if Win is there
+   
+   
+        if (result == true){
+            playerScore++
+}
+    
+        else{
+            computerScore++
+}
         
     }
 
-   
+//Event Listeners for Player Choice
+const rockButton = document.querySelector('#rock')
+rockButton.addEventListener('click', () => {
+    playerChoice = 'rock';
+})
 
+const paperButton = document.querySelector('#paper')
+paperButton.addEventListener('click', () => {
+    playerChoice = 'paper';
+})
+
+const scissorsButton = document.querySelector('#scissors')
+scissorsButton.addEventListener('click', () => {
+    playerChoice = 'scissors';  
+})   
+
+//Event Listeners to kick off game.
 rockButton.addEventListener('click', function(){
     postRoundResult()});
 paperButton.addEventListener('click', function(){
