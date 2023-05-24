@@ -39,12 +39,16 @@ let playerScore = 0
 
 */
 
+//Event Listeners for Player Choice
 const rockButton = document.querySelector('#rock')
 rockButton.addEventListener('click', () => {
     playerChoice = 'rock';
     console.log(playerChoice);
-    
-})
+
+    }
+   
+   
+    )
 
 const paperButton = document.querySelector('#paper')
 paperButton.addEventListener('click', () => {
@@ -86,10 +90,10 @@ function getComputerChoice(){
 
 function gameRound(){
 
-    getPlayerChoice();
+    
     getComputerChoice();
-    console.log(playerChoice);
-    console.log(computerChoice);
+    console.log('Player Pick ' + playerChoice);
+    console.log('Computer Pick ' + computerChoice);
     
 
     if (playerChoice == "rock" && computerChoice == "rock"){
@@ -127,7 +131,13 @@ function gameRound(){
     else if (playerChoice == "paper" && computerChoice == "scissors") {
         return "You Lose! Paper gets cut up by Scissors"
                                 }
+                               
+                                
+
     }
+    
+rockButton.addEventListener('click', function(){
+    gameRound()})
 
 
 /* COMMENT OUT the rounds game
