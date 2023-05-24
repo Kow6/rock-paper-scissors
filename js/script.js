@@ -173,6 +173,4 @@ paperButton.addEventListener('click', function(){
 scissorsButton.addEventListener('click', function(){
     postRoundResult()});
 
-//TRYING
-
-
+//Need to add remove event listener once score at 5
