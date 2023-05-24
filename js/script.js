@@ -43,24 +43,21 @@ let playerScore = 0
 const rockButton = document.querySelector('#rock')
 rockButton.addEventListener('click', () => {
     playerChoice = 'rock';
-    console.log(playerChoice);
 
-    }
-   
-   
-    )
+
+})
 
 const paperButton = document.querySelector('#paper')
 paperButton.addEventListener('click', () => {
     playerChoice = 'paper';
-    console.log(playerChoice);
+
     
 })
 
 const scissorsButton = document.querySelector('#scissors')
 scissorsButton.addEventListener('click', () => {
     playerChoice = 'scissors';
-    console.log(playerChoice);
+
     
 })
 
@@ -92,6 +89,16 @@ function gameRound(){
 
     
     getComputerChoice();
+    
+
+
+    const container = document.querySelector('#comp');
+    const content = document.createElement('span');
+    content.textContent = computerChoice;
+    console.log(content)
+    container.appendChild(content);
+
+
     console.log('Player Pick ' + playerChoice);
     console.log('Computer Pick ' + computerChoice);
     
@@ -131,13 +138,33 @@ function gameRound(){
     else if (playerChoice == "paper" && computerChoice == "scissors") {
         return "You Lose! Paper gets cut up by Scissors"
                                 }
+                            
                                
-                                
 
     }
-    
+
+function postRoundResult(){
+        let gameresultstring = gameRound();
+        const container2 = document.querySelector('#result');
+        const content2 = document.createElement('span');
+        content2.textContent = gameresultstring;
+        console.log(content2);
+        
+        container2.append(content2);
+        
+    }
+
+   
+
 rockButton.addEventListener('click', function(){
-    gameRound()})
+    postRoundResult()});
+paperButton.addEventListener('click', function(){
+    postRoundResult()});
+scissorsButton.addEventListener('click', function(){
+    postRoundResult()});
+
+
+
 
 
 /* COMMENT OUT the rounds game
